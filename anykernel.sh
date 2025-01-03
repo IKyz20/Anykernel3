@@ -1,11 +1,11 @@
-### AnyKernel3 Ramdisk Mod Script
-## osm0sis @ xda-developers
+# AnyKernel3 Ramdisk Mod Script
+# osm0sis @ xda-developers
 
-### AnyKernel setup
-# global properties
+## AnyKernel setup
+# begin properties
 properties() { '
-kernel.string=Installing kernel IKyz...
-do.devicecheck=1
+kernel.string=
+do.devicecheck=0
 do.modules=0
 do.systemless=1
 do.cleanup=1
@@ -15,7 +15,7 @@ device.name2=citrus
 device.name3=
 device.name4=
 device.name5=
-supported.versions=11 - 14
+supported.versions=11-14
 supported.patchlevels=
 supported.vendorpatchlevels=
 '; } # end properties
@@ -38,4 +38,19 @@ ramdisk_compression=auto;
 set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
-## end boot install
+
+## AnyKernel install
+#Method 1:
+#dump_boot;
+#write_boot;
+
+#Method 2:
+split_boot;
+flash_boot;
+
+
+
+#ui_print "- Thank you for using IKyz Kernel...";
+#ui_print " ";
+
+## end install
