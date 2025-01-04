@@ -40,17 +40,7 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
 
 ## AnyKernel install
-#Method 1:
-#dump_boot;
-#write_boot;
+dump_boot;
 
-#Method 2:
-split_boot;
-flash_boot;
-
-
-
-#ui_print "- Thank you for using IKyz Kernel...";
-#ui_print " ";
-
+write_boot;
 ## end install
